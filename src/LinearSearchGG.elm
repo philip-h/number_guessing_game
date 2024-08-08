@@ -117,10 +117,10 @@ update msg model =
 
 themeDark : { bg : Tw.Color, surfaceBg : Tw.Color, accent : Tw.Color, text : Tw.Color }
 themeDark =
-    { bg = Tw.slate_700
-    , surfaceBg = Tw.slate_600
+    { bg = Tw.zinc_700
+    , surfaceBg = Tw.zinc_600
     , accent = Tw.purple_400
-    , text = Tw.slate_100
+    , text = Tw.zinc_100
     }
 
 
@@ -147,7 +147,9 @@ view model =
                     ]
                 , h1
                     [ css [ Tw.text_3xl ] ]
-                    [ text "Linear search game" ]
+                    [ span [ css [ Tw.text_color themeDark.accent ]] [ text "Discover " ]
+                    , text "Linear Search"
+                    ]
                 , div
                     [ css
                         [ Tw.flex
@@ -276,7 +278,7 @@ viewStatus model =
                         [ p [] [ text ("Number of guesses: " ++ String.fromInt model.guessCount ++ " / " ++ String.fromInt model.maxGuessesNeeded) ]
                         , baseButton
                             [ css
-                                [ Tw.cursor_not_allowed, Tw.bg_color Tw.gray_400 ]
+                                [ Tw.cursor_not_allowed, Tw.bg_color Tw.zinc_400 ]
                             ]
                             [ text "Play again?" ]
                         ]
